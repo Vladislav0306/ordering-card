@@ -35,7 +35,7 @@ public class OrderingTest {
         driver.findElement(By.xpath("//span[@data-test-id='phone']//input")).sendKeys("+79183477293");
         driver.findElement(By.xpath(".//span[contains(@class, 'checkbox__box')]")).click();
         driver.findElement(By.xpath(".//span[contains(text(), 'Продолжить')]")).click();
-        String actualMessage = driver.findElement(By.className("paragraph")).getText();
+        String actualMessage = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
         String expectedMessage = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
         Assertions.assertEquals(expectedMessage, actualMessage.strip());
     }
